@@ -54,7 +54,7 @@ return view.extend({
 		o.value('bing', _('Bing'));
 		o.value('unsplash', _('Unsplash'));
 		o.value('wallhaven', _('Wallhaven'));
-		o.default = 'bing';
+		o.default = 'none';
 		o.rmempty = false;
 
 		o = s.option(form.ListValue, 'mode', _('Theme mode'));
@@ -78,13 +78,13 @@ return view.extend({
 			_('0 transparent - 1 opaque (suggest: transparent: 0 or translucent preset: 0.5).'));
 		for (var i of trans_set)
 			o.value(i);
-		o.default = '0.5';
+		o.default = '0.1';
 		o.rmempty = false;
 
 		o = s.option(form.Value, 'blur', _('[Light mode] Frosted Glass Radius'),
 			_('Larger value will more blurred (suggest: clear: 1 or blur preset: 10).'));
 		o.datatype = 'ufloat';
-		o.default = '10';
+		o.default = '1';
 		o.rmempty = false;
 
 		o = s.option(form.Value, 'dark_primary', _('[Dark mode] Primary Color'),
@@ -102,13 +102,13 @@ return view.extend({
 			_('0 transparent - 1 opaque (suggest: black translucent preset: 0.5).'));
 		for (var i of trans_set)
 			o.value(i);
-		o.default = '0.5';
+		o.default = '0.1';
 		o.rmempty = false;
 
 		o = s.option(form.Value, 'blur_dark', _('[Dark mode] Frosted Glass Radius'),
 			_('Larger value will more blurred (suggest: clear: 1 or blur preset: 10).'))
 		o.datatype = 'ufloat';
-		o.default = '10';
+		o.default = '1';
 		o.rmempty = false;
 
 		o = s.option(form.Button, '_save', _('Save settings'));
